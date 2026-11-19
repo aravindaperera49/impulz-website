@@ -54,3 +54,11 @@ header img{width:185px;max-width:100%;height:auto}header nav{align-items:center;
 
 /* Transparent hero artwork */
 .hero-art{background:transparent;border:0;border-radius:0;box-shadow:none}.hero-art img{border-radius:0;filter:drop-shadow(0 18px 24px #0005)}
+
+/* Seamless chromatic splash behind the transparent hero artwork */
+.hero-art{isolation:isolate;overflow:visible;position:relative}
+.hero-art::before{content:"";position:absolute;z-index:-2;inset:-12% -8%;pointer-events:none;background:radial-gradient(ellipse at 29% 43%,#007bff9c 0%,#0055db50 25%,transparent 58%),radial-gradient(ellipse at 77% 64%,#ff731b91 0%,#d51d453d 27%,transparent 57%),radial-gradient(ellipse at 57% 22%,#5639d95c,transparent 55%);filter:blur(30px)}
+.hero-art::after{content:"";position:absolute;z-index:-1;inset:4% -3%;pointer-events:none;background:linear-gradient(133deg,transparent 19%,#00baff55 19.5%,#0868ff55 28%,transparent 29% 65%,#f4374750 65.5%,#ff9a3555 73%,transparent 74%);mask-image:radial-gradient(ellipse,#000 18%,transparent 75%);filter:blur(3px)}
+.hero-art img{position:relative;z-index:1}
+@media(max-width:850px){.hero-art::before{inset:-5% 0;filter:blur(24px)}.hero-art::after{inset:0}}
+body{overflow-x:clip}
