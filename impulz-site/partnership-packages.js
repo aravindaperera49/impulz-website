@@ -1,8 +1,8 @@
 /* Single source of truth for monthly partnership packages on both pages. */
 const partnershipPackages = [
-  {name:"Starter",price:"$99",features:["Up to 5 design requests","Social media graphics","Basic marketing materials"]},
+  {name:"Social Media Pack",price:"$99",features:["Up to 5 social media designs per month"]},
   {name:"Business",price:"$149",features:["Up to 10 design requests","Social media & marketing","Priority support"],featured:true},
-  {name:"Enterprise",price:"$299",features:["Up to 20 design requests","Campaign graphics","Dedicated support"]}
+  {name:"Enterprise",price:"$299",features:["Up to 10 print or digital flyer designs per month","Complimentary seasonal and holiday greeting posts for relevant occasions throughout the year (e.g., Christmas, New Year and Mother’s Day)","A fresh social media cover design every month","Same-day delivery for urgent design requests","Complimentary revisions to previously completed designs for your company"]}
 ];
 document.querySelectorAll('[data-partnership-packages]').forEach(mount=>{
   const offers=document.createElement('div');offers.className='partner-offers';
