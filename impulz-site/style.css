@@ -73,7 +73,7 @@ header>.header-whatsapp{display:inline-flex;align-items:center;justify-content:c
 
 
 /* Homepage headline: DM Sans Black Italic */
-.hero h1{font-family:"DM Sans",system-ui,sans-serif;font-weight:1000;font-style:italic;letter-spacing:-.015em}.hero h1 em{font-style:italic}
+.hero h1{font-family:"DM Sans",system-ui,sans-serif;font-weight:1000;font-style:italic;letter-spacing:.025em}.hero h1 em{font-style:italic}
 
 /* Prevent the italic L in VISUAL from being clipped by the gradient text box */
 .hero h1 .brand-gradient{padding-right:.19em;margin-right:-.19em;overflow:visible;white-space:nowrap}
