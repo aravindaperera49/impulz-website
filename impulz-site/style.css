@@ -98,3 +98,10 @@ header>.header-whatsapp{display:inline-flex;align-items:center;justify-content:c
 
 /* Use the full available width for the monthly package terms on All Services */
 .services-partnerships .partner-note{max-width:none;width:100%;white-space:nowrap;font-size:clamp(10px,.95vw,13px)}@media(max-width:1050px){.services-partnerships .partner-note{white-space:normal}}
+
+/* Concise services note and clear transition to portfolio */
+.pricing-details{padding:20px 24px;margin-top:18px;background:#ffffff04}
+.pricing-details p{font-size:14px;line-height:1.55;margin:0 0 12px}
+.pricing-details ul{font-size:13px;line-height:1.5;gap:8px 20px}
+#portfolio{position:relative;border-top:1px solid #ffffff24;padding-top:64px}
+#portfolio::before{content:"";position:absolute;top:-2px;left:0;width:min(240px,35%);height:3px;border-radius:3px;background:linear-gradient(90deg,#c51f2b,#f17724,#ffb52e)}
