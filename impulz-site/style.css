@@ -105,3 +105,9 @@ header>.header-whatsapp{display:inline-flex;align-items:center;justify-content:c
 .pricing-details ul{font-size:13px;line-height:1.5;gap:8px 20px}
 #portfolio{position:relative;border-top:1px solid #ffffff24;padding-top:64px}
 #portfolio::before{content:"";position:absolute;top:-2px;left:0;width:min(240px,35%);height:3px;border-radius:3px;background:linear-gradient(90deg,#c51f2b,#f17724,#ffb52e)}
+
+/* Unboxed service summary with gradient lightning-bolt bullets */
+.pricing-details{border:0;border-radius:0;background:none;box-shadow:none;padding:6px 0 0;margin-top:14px}
+.pricing-details ul{list-style:none;padding:0;gap:12px 24px}
+.pricing-details li{position:relative;padding-left:25px}
+.pricing-details li::before{content:"";position:absolute;left:0;top:.15em;width:16px;height:19px;background:linear-gradient(145deg,#ffb52e 5%,#f17724 52%,#c51f2b 100%);clip-path:polygon(54% 0,9% 55%,44% 55%,27% 100%,94% 38%,57% 38%,77% 0)}
