@@ -69,3 +69,6 @@ body{overflow-x:clip}
 
 /* Homepage navigation, WhatsApp contact and service details */
 header>.header-whatsapp{display:inline-flex;align-items:center;justify-content:center;gap:9px;background:#25d366;border:1px solid #25d366;color:#fff;border-radius:9px;white-space:nowrap;box-shadow:none;transition:background .2s,transform .2s}header>.header-whatsapp:hover{background:#1fb95a;transform:translateY(-1px)}header>.header-whatsapp svg{flex:none}.pricing-details{max-width:100%;margin-top:24px;padding:22px 26px;border:1px solid #ffffff20;border-radius:12px;background:#ffffff06}.pricing-details p{max-width:100%;margin:0 0 15px;line-height:1.7}.pricing-details strong{color:#e8edf9}.pricing-details ul{margin:0;padding-left:20px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px 24px;color:#aab0c3;font-size:14px;line-height:1.65}.pricing-details li{padding-left:3px}@media(max-width:850px){.pricing-details ul{grid-template-columns:1fr}header>.header-whatsapp{display:inline-flex}}
+
+/* Nokia Expanded display type for homepage hero */
+@font-face{font-family:"Nokia Expanded";src:url("assets/NokiaExpandedItalic-Bold.ttf") format("truetype");font-weight:700;font-style:italic;font-display:swap}.hero h1{font-family:"Nokia Expanded",system-ui,sans-serif;font-weight:700;font-style:italic;letter-spacing:-.035em;line-height:1.02}.hero h1 em{font-style:inherit}
