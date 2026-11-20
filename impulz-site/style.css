@@ -95,3 +95,6 @@ header>.header-whatsapp{display:inline-flex;align-items:center;justify-content:c
 
 /* Separate one-time services from monthly partnerships */
 .services-partnerships{position:relative;margin-top:64px;padding-top:64px;border-top:1px solid #ffffff24}.services-partnerships::before{content:"";position:absolute;top:-2px;left:0;width:min(240px,35%);height:3px;border-radius:3px;background:linear-gradient(90deg,#c51f2b,#f17724,#ffb52e)}.services-partnerships .partner-offers>.eyebrow{display:none}.services-partnerships .partner-offers>h2 br{display:none}.services-partnerships .partner-offers>h2{font-size:clamp(27px,3vw,42px);white-space:nowrap;letter-spacing:-.035em}@media(max-width:800px){.services-partnerships .partner-offers>h2{white-space:normal}}
+
+/* Use the full available width for the monthly package terms on All Services */
+.services-partnerships .partner-note{max-width:none;width:100%;white-space:nowrap;font-size:clamp(10px,.95vw,13px)}@media(max-width:1050px){.services-partnerships .partner-note{white-space:normal}}
