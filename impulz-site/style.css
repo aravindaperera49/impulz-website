@@ -77,3 +77,6 @@ header>.header-whatsapp{display:inline-flex;align-items:center;justify-content:c
 
 /* Prevent the italic L in VISUAL from being clipped by the gradient text box */
 .hero h1 .brand-gradient{padding-right:.19em;margin-right:-.19em;overflow:visible;white-space:nowrap}
+
+/* Portfolio section eyebrow accent matches Services & Pricing */
+#portfolio>.eyebrow{display:flex;align-items:center;gap:10px;margin-bottom:14px;letter-spacing:.12em;font-size:11px}#portfolio>.eyebrow:before{content:"";width:34px;height:2px;flex:none;background:linear-gradient(90deg,#c51f2b,#ffb52e)}
