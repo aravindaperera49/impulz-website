@@ -173,3 +173,18 @@ header>.header-whatsapp{display:inline-flex;align-items:center;justify-content:c
 @media(max-width:1100px){.pricing-carousel{grid-column:1/-1}}
 @media(max-width:650px){.pricing-carousel .pricing-grid{grid-auto-columns:calc((100% - 12px)/2);grid-template-columns:none}}
 @media(max-width:420px){.pricing-carousel .pricing-grid{grid-auto-columns:85%;grid-template-columns:none}.pricing-prev{left:-9px}.pricing-next{right:-9px}}
+
+/* Homepage closing CTA */
+#contact.contact{position:relative;isolation:isolate;overflow:hidden;padding-top:100px;padding-bottom:110px;background:radial-gradient(ellipse at 78% 65%,rgba(242,103,37,.15),transparent 48%),radial-gradient(ellipse at 10% 95%,rgba(166,42,76,.16),transparent 55%),#101421;border-top:1px solid #ffffff20}
+#contact.contact::before{content:"";position:absolute;inset:0;z-index:-2;opacity:.3;background-image:linear-gradient(#ffffff0b 1px,transparent 1px),linear-gradient(90deg,#ffffff0b 1px,transparent 1px);background-size:54px 54px;mask-image:linear-gradient(90deg,transparent,#000 55%,#000)}
+#contact.contact::after{content:"";position:absolute;width:440px;height:440px;right:-135px;top:-125px;border-radius:50%;background:radial-gradient(circle,rgba(245,113,41,.13),transparent 68%);filter:blur(8px);z-index:-1;pointer-events:none}
+#contact .contact-content{position:relative;z-index:1;max-width:850px;margin:0 auto;text-align:center}
+#contact .contact-content p{max-width:590px;margin-left:auto;margin-right:auto}
+#contact .contact-actions{display:flex;flex-wrap:wrap;gap:14px;align-items:center;justify-content:center;margin-top:28px}
+#contact .contact-whatsapp{display:inline-flex;align-items:center;justify-content:center;gap:11px;background:#25d366!important;color:#092f1b!important;border-color:#25d366!important;font-weight:700;transition:background .2s,transform .2s}
+#contact .contact-whatsapp:hover{background:#1fbd5a!important;border-color:#1fbd5a!important;transform:translateY(-2px)}
+#contact .contact-whatsapp svg{flex:none}
+#contact .contact-orbit{position:absolute;pointer-events:none;z-index:-1;border:1px solid rgba(255,163,93,.19);border-radius:50%;transform:rotate(-25deg)}
+#contact .contact-orbit-one{width:540px;height:540px;right:-260px;top:-160px;box-shadow:0 0 0 64px rgba(255,163,93,.025),0 0 0 130px rgba(255,163,93,.02)}
+#contact .contact-orbit-two{width:330px;height:330px;left:-210px;bottom:-210px;border-color:rgba(210,83,109,.22);box-shadow:0 0 0 55px rgba(210,83,109,.025)}
+@media(max-width:600px){#contact.contact{padding-top:72px;padding-bottom:80px}#contact .contact-orbit-one{right:-370px}#contact .contact-actions{flex-direction:column}#contact .contact-actions a{width:min(100%,310px)}}
