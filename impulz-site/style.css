@@ -324,3 +324,6 @@ header>.header-whatsapp{display:inline-flex;align-items:center;justify-content:c
 #gallery-thumbs img{object-fit:contain;object-position:center;background:#141d2e;padding:3px;box-sizing:border-box}
 .gallery-stage #large{object-fit:contain;object-position:center;background:#101724}
 @media(max-width:600px){#portfolio .category-card>img{padding:8px}}
+
+/* Slightly tighter spacing between the three homepage hero title lines */
+.hero h1.hero-flare-title{line-height:.90}
