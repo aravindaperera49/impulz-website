@@ -205,3 +205,18 @@ header>.header-whatsapp{display:inline-flex;align-items:center;justify-content:c
 #contact .contact-content{width:100%;max-width:none;margin:0;text-align:left}
 #contact .contact-content h2,#contact .contact-content p{margin-left:0}
 #contact .contact-actions{justify-content:flex-start;margin-left:0}
+
+/* Privacy Policy page */
+.policy-page{max-width:1500px;margin:0 auto}
+.policy-hero{padding-top:100px;padding-bottom:65px;background:radial-gradient(ellipse at 90% 0%,rgba(241,119,36,.12),transparent 55%);border-bottom:1px solid #ffffff18}
+.policy-hero h1{font-size:clamp(48px,7vw,94px);letter-spacing:-.06em;line-height:1.04;margin:16px 0 26px}
+.policy-hero>p{max-width:750px;font-size:17px;line-height:1.8}
+.policy-hero .policy-updated{font-size:13px;color:#8890a7;margin-top:25px}
+.policy-accent{background:linear-gradient(100deg,#f17724,#ffb52e);background-clip:text;-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.policy-body{max-width:970px;padding-top:65px;padding-bottom:110px}
+.policy-body h2{font-size:clamp(23px,3vw,30px);letter-spacing:-.025em;line-height:1.25;margin:38px 0 12px}
+.policy-body h2:first-child{margin-top:0}
+.policy-body p{max-width:850px;line-height:1.85;color:#b5bdd0;margin-bottom:18px}
+.policy-body a,footer a{color:#ffac58;text-decoration:underline;text-decoration-color:#ffac5860;text-underline-offset:3px}
+.policy-body a:hover,footer a:hover{color:#ffcc95}
+@media(max-width:600px){.policy-hero{padding-top:65px;padding-bottom:45px}.policy-body{padding-top:45px;padding-bottom:75px}.policy-hero>p{font-size:15px}}
