@@ -2,7 +2,7 @@
 const partnershipPackages = [
   {name:"Starter",price:"$99",features:["Up to 4 promotional flyers per month (print or digital)","OR","Up to 4 social media posts per month","10% off additional design requests"]},
   {name:"Business",price:"$149",features:["Up to 6 promotional flyers per month (print or digital)","Consistent branding across all designs","Premium stock imagery included","10% off additional design requests"],featured:true},
-  {name:"Enterprise",price:"$299",features:["$450 in monthly design credits to use across any design services*","Premium, brand-focused designs across all projects","A fresh social media cover design every month","Same-day delivery for urgent requests (subject to availability)","Complimentary revisions to previously completed work"]}
+  {name:"Enterprise",price:"$299",features:["$450 in monthly design credits to use across any design services*","Premium, brand-focused designs across all projects","A fresh social media cover design every month","Same-day delivery for urgent requests (subject to availability)","Complimentary minor updates to previously completed designs"]}
 ];
 document.querySelectorAll('[data-partnership-packages]').forEach(mount=>{
   const offers=document.createElement('div');offers.className='partner-offers';
