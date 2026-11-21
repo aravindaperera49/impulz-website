@@ -271,3 +271,11 @@ header>.header-whatsapp{display:inline-flex;align-items:center;justify-content:c
 @keyframes hero-graphic-drift{from{transform:translate3d(-6px,7px,0) rotate(-1deg)}to{transform:translate3d(7px,-8px,0) rotate(1deg)}}
 @media(max-width:650px){.hero .hero-energy-swoosh{left:-8%;top:-8%;width:116%;height:116%;opacity:.82}}
 @media(prefers-reduced-motion:reduce){.hero .hero-energy-swoosh{animation:none}}
+
+/* Cinematic, translucent flowing silk rather than illustrated energy shapes */
+.hero .hero-energy-swoosh{left:-12%;top:-11%;width:124%;height:122%;opacity:.78;filter:none;animation:hero-silk-float 12s ease-in-out infinite alternate}
+.hero .hero-graphic-back{opacity:.86}
+.hero .hero-graphic-front{display:none}
+@keyframes hero-silk-float{from{transform:translate3d(-5px,4px,0) scale(.99)}to{transform:translate3d(5px,-5px,0) scale(1.015)}}
+@media(max-width:650px){.hero .hero-energy-swoosh{left:-7%;top:-7%;width:114%;height:114%;opacity:.6}}
+@media(prefers-reduced-motion:reduce){.hero .hero-energy-swoosh{animation:none}}
