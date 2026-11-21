@@ -153,3 +153,10 @@ header>.header-whatsapp{display:inline-flex;align-items:center;justify-content:c
 #services.services-selected{background:linear-gradient(110deg,#0d204b65,#f1772410 75%);box-shadow:inset 0 0 0 2px #f17724,inset 0 0 45px #f1772420;border-radius:14px}
 #services.services-selected .pricing-intro h2{transition:text-shadow .3s;text-shadow:0 0 22px #f1772480}
 @media(prefers-reduced-motion:reduce){#services,#services.services-selected .pricing-intro h2{transition:none}}
+
+/* Keep the highlighted heading words identical in size and align both ordering options */
+.stats-order-options h3 span{font:inherit;letter-spacing:inherit;line-height:inherit}
+.stats-order-choice h4,.stats-order-choice .fiverr-logo-heading{height:28px;min-height:28px;margin:0;display:flex;align-items:center;align-content:center;line-height:28px;flex-wrap:nowrap}
+.stats-order-choice .fiverr-logo-heading{gap:7px}
+.fiverr-logo-prefix{line-height:28px}
+.fiverr-wordmark{height:24px;width:78px;flex:none;vertical-align:middle}
