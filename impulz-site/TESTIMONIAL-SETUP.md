@@ -12,3 +12,5 @@
 8. Do not share invitation links publicly. A review submitted with anonymous permission remains private until anonymous-publication support is implemented; private feedback is never published.
 
 **Security notes:** Admin password is checked server-side; signed HttpOnly Secure SameSite cookies expire in 8 hours. D1 stores only a SHA-256 hash of each invitation token. All review submissions require a valid unexpired token. Login rate limiting should be configured in Cloudflare WAF before public use. Ensure Pages Functions run and fail closed on critical routes. Cloudflare settings must be configured manually; committing these files does not create a D1 database or deploy secrets.
+
+Deployment trigger: Cloudflare Pages root directory is impulz-site and build output is .; redeploy to activate Pages Functions.
