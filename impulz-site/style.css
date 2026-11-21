@@ -296,5 +296,5 @@ header>.header-whatsapp{display:inline-flex;align-items:center;justify-content:c
 @media(max-width:650px){.hero .hero-energy-swoosh{top:-14%;left:8%;width:84%;height:72%}}
 
 /* Lean lightning bolts to the right, matching the headline's italic slant */
-.hero .hero-energy-swoosh .hero-graphic-back{transform-box:view-box;transform-origin:50% 35%;transform:rotate(-9deg) skewX(15deg) scaleY(1.18)}
-@media(max-width:650px){.hero .hero-energy-swoosh .hero-graphic-back{transform:rotate(-8deg) skewX(13deg) scaleY(1.12)}}
+.hero .hero-energy-swoosh .hero-graphic-back{transform-box:view-box;transform-origin:50% 35%;transform:rotate(0deg) skewX(15deg) scaleY(1.18)}
+@media(max-width:650px){.hero .hero-energy-swoosh .hero-graphic-back{transform:rotate(0deg) skewX(13deg) scaleY(1.12)}}
