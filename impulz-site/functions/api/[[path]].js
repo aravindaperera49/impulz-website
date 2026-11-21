@@ -11,7 +11,7 @@ const now=()=>Date.now(),uid=()=>crypto.randomUUID();
 async function handle({request,env}) {
  const url=new URL(request.url),route=url.pathname.replace(/^\/api\/?/,'').replace(/\/$/,'');const method=request.method;
  if(!env.DB)return json({error:'Database not configured yet'},503);
- if(method==='GET'&&route==='testimonials'){const data=await env.DB.prepare("SELECT name,company,rating,quote FROM testimonials WHERE status='approved' AND permission='yes' ORDER BY reviewed_at DESC LIMIT 100").all();return json({testimonials:data.results||[]})}
+ if(method==='GET'&&route==='testimonials'){const data=await env.DB.prepare("SELECT CASE WHEN permission='anonymous' THEN 'Anonymous Client' ELSE name END AS name, CASE WHEN permission='anonymous' THEN '' ELSE company END AS company,rating,quote FROM testimonials WHERE status='approved' AND permission IN ('yes','anonymous') ORDER BY reviewed_at DESC LIMIT 100").all();return json({testimonials:data.results||[]})}
  if(method==='POST'&&route==='login'){
   if(!env.ADMIN_PASSWORD||!env.SESSION_SECRET)return json({error:'Admin credentials not configured'},503);
   const b=await request.json().catch(()=>({}));const user=String(b.username||''),pass=String(b.password||'');
@@ -38,7 +38,7 @@ async function handle({request,env}) {
  if(!await authed(request,env))return json({error:'Please sign in'},401);
  if(method==='GET'&&route==='admin'){const [inv,rev]=await Promise.all([env.DB.prepare('SELECT id,client_name,company,expires_at,used_at,revoked_at,created_at FROM invitations ORDER BY created_at DESC LIMIT 100').all(),env.DB.prepare('SELECT id,name,company,rating,quote,permission,status,created_at FROM testimonials ORDER BY created_at DESC LIMIT 200').all()]);return json({invitations:inv.results||[],testimonials:rev.results||[]})}
  if(method==='POST'&&route==='admin/invite'){const b=await request.json().catch(()=>({}));const name=String(b.name||'').trim(),company=String(b.company||'').trim();if(!name||name.length>100||company.length>120)return json({error:'Enter a valid client name'},400);const token=hex(crypto.getRandomValues(new Uint8Array(32)));await env.DB.prepare('INSERT INTO invitations (id,token_hash,client_name,company,expires_at,created_at) VALUES (?,?,?,?,?,?)').bind(uid(),await hash(token),name,company,now()+30*86400000,now()).run();return json({url:url.origin+'/review.html?invite='+token})}
- if(method==='POST'&&route==='admin/status'){const b=await request.json().catch(()=>({}));if(!['approved','rejected','pending'].includes(b.status))return json({error:'Invalid status'},400);const result=await env.DB.prepare('UPDATE testimonials SET status=?,reviewed_at=? WHERE id=?').bind(b.status,now(),b.id).run();return json({ok:result.meta.changes>0})}
+ if(method==='POST'&&route==='admin/status'){const b=await request.json().catch(()=>({}));if(!['approved','rejected','pending'].includes(b.status))return json({error:'Invalid status'},400);const result=await env.DB.prepare("UPDATE testimonials SET status=?,reviewed_at=? WHERE id=? AND (permission!='no' OR ?!='approved')").bind(b.status,now(),b.id,b.status).run();return json({ok:result.meta.changes>0})}
  if(method==='POST'&&route==='admin/revoke'){const b=await request.json().catch(()=>({}));await env.DB.prepare('UPDATE invitations SET revoked_at=? WHERE id=? AND used_at IS NULL').bind(now(),b.id).run();return json({ok:true})}
  return json({error:'Not found'},404);
 }
