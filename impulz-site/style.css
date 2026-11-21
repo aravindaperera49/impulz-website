@@ -230,3 +230,9 @@ header>.header-whatsapp{display:inline-flex;align-items:center;justify-content:c
 .policy-body h2{font-size:clamp(19px,2vw,23px);line-height:1.35;margin:30px 0 9px}
 .policy-body p{font-size:14px;line-height:1.75;margin-bottom:14px}
 @media(max-width:600px){.policy-hero{padding-top:48px;padding-bottom:34px}.policy-body{padding-top:32px;padding-bottom:55px}.policy-hero>p{font-size:14px}}
+
+/* Subtle IMPULZ lightning-bolt watermark in closing contact panel */
+#contact .contact-brand-bolt{position:absolute;right:8%;top:50%;transform:translateY(-50%) rotate(8deg);height:88%;width:auto;max-width:35%;opacity:.12;z-index:0;pointer-events:none;filter:drop-shadow(0 0 30px rgba(241,119,36,.12))}
+#contact .contact-content{position:relative;z-index:1}
+@media(max-width:900px){#contact .contact-brand-bolt{right:-3%;height:76%;opacity:.085}}
+@media(max-width:600px){#contact .contact-brand-bolt{right:-12%;height:70%;opacity:.055}}
