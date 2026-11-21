@@ -262,3 +262,12 @@ header>.header-whatsapp{display:inline-flex;align-items:center;justify-content:c
 @keyframes hero-swoosh-float{from{transform:translate3d(-5px,6px,0);opacity:.65}to{transform:translate3d(8px,-7px,0);opacity:.83}}
 @media(max-width:650px){.hero .hero-energy-swoosh{left:-5%;top:-5%;width:110%;height:110%;opacity:.55}}
 @media(prefers-reduced-motion:reduce){.hero .hero-energy-swoosh{animation:none}}
+
+/* Bold graphical hero composition: filled dimensional ribbons, shards and light bloom */
+.hero .hero-art{isolation:isolate}
+.hero .hero-energy-swoosh{left:-13%;top:-14%;width:128%;height:128%;opacity:1;filter:drop-shadow(0 10px 26px rgba(0,110,255,.22));animation:hero-graphic-drift 9s ease-in-out infinite alternate}
+.hero .hero-graphic-back{opacity:.9}
+.hero .hero-graphic-front{opacity:.8}
+@keyframes hero-graphic-drift{from{transform:translate3d(-6px,7px,0) rotate(-1deg)}to{transform:translate3d(7px,-8px,0) rotate(1deg)}}
+@media(max-width:650px){.hero .hero-energy-swoosh{left:-8%;top:-8%;width:116%;height:116%;opacity:.82}}
+@media(prefers-reduced-motion:reduce){.hero .hero-energy-swoosh{animation:none}}
