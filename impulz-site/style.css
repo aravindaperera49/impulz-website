@@ -128,3 +128,15 @@ header>.header-whatsapp{display:inline-flex;align-items:center;justify-content:c
 .stats .stats-order-choice a:hover{text-decoration:underline}
 @media(max-width:1250px){.stats{grid-template-columns:repeat(3,minmax(0,1fr))}.stats-order-options{grid-column:1/-1;border-left:0;border-top:1px solid #ffffff20;padding:20px 0 0}.stats-order-grid{gap:24px}.stats-order-choice+.stats-order-choice{padding-left:24px}}
 @media(max-width:600px){.stats{grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}.stats strong{font-size:clamp(20px,5vw,30px)}.stats-order-grid{grid-template-columns:1fr;gap:20px}.stats-order-choice+.stats-order-choice{border-left:0;border-top:1px solid #ffffff1c;padding:18px 0 0}.stats-order-options h3{font-size:18px}}
+
+/* Consistent, readable homepage supporting text */
+.stats-order-options h3{font-size:18px;line-height:1.35}
+.stats-order-choice h4{font-size:15px}
+.stats-order-choice .stats-order-tag{font-size:14px;line-height:1.5}
+.stats-order-choice p{font-size:14px;line-height:1.6}
+.stats-order-choice small{font-size:13px;line-height:1.55}
+.stats .stats-order-choice a{font-size:14px}
+.pricing-details p{font-size:15px;line-height:1.65}
+.pricing-details ul{font-size:15px;line-height:1.65;gap:14px 24px}
+.pricing-details li::before{top:.23em}
+@media(min-width:1251px) and (max-width:1550px){.stats{grid-template-columns:repeat(3,minmax(110px,1fr)) minmax(520px,2.6fr);gap:12px}.stats-order-options{padding-left:18px}}
