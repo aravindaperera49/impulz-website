@@ -298,3 +298,12 @@ header>.header-whatsapp{display:inline-flex;align-items:center;justify-content:c
 /* Lean lightning bolts to the right, matching the headline's italic slant */
 .hero .hero-energy-swoosh .hero-graphic-back{transform-box:view-box;transform-origin:50% 35%;transform:rotate(0deg) skewX(15deg) scaleY(1.18)}
 @media(max-width:650px){.hero .hero-energy-swoosh .hero-graphic-back{transform:rotate(0deg) skewX(13deg) scaleY(1.12)}}
+
+/* Ordering options: clickable heading pills replace repetitive links below */
+.stats-order-choice h4,.stats-order-choice .fiverr-logo-heading{height:auto;min-height:38px;line-height:normal}
+.stats .stats-order-choice .order-heading-button{display:inline-flex;align-items:center;justify-content:center;gap:9px;margin:0;padding:9px 16px;border:1px solid rgba(90,174,255,.52);border-radius:999px;background:linear-gradient(115deg,rgba(0,53,140,.9),rgba(8,120,239,.85));color:#fff;font-size:14px;font-weight:750;line-height:1.2;text-decoration:none;box-shadow:0 5px 17px rgba(0,77,185,.16);transition:filter .2s,box-shadow .2s,transform .2s}
+.stats .stats-order-choice .order-heading-button:hover{filter:brightness(1.15);transform:translateY(-1px);box-shadow:0 7px 20px rgba(0,102,220,.24);text-decoration:none}
+.stats .stats-order-choice .fiverr-heading-button{background:rgba(17,46,39,.75);border-color:rgba(29,191,115,.65);box-shadow:0 5px 17px rgba(29,191,115,.09)}
+.stats .stats-order-choice .fiverr-heading-button:hover{box-shadow:0 7px 20px rgba(29,191,115,.19)}
+.stats .stats-order-choice .fiverr-heading-button .fiverr-wordmark{width:67px;height:23px}
+.stats .stats-order-choice .order-heading-arrow{color:#1dbf73}
