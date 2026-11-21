@@ -283,3 +283,6 @@ header>.header-whatsapp{display:inline-flex;align-items:center;justify-content:c
 /* Smaller, slimmer hero ribbons while retaining the realistic silk finish */
 .hero .hero-energy-swoosh{left:-3%;top:-2%;width:106%;height:104%;opacity:.73}
 @media(max-width:650px){.hero .hero-energy-swoosh{left:0;top:0;width:100%;height:100%;opacity:.57}}
+
+/* Halve the thickness of the flowing silk ribbons without changing their length or pointed ends */
+.hero .hero-energy-swoosh .hero-graphic-back > path{transform-box:fill-box;transform-origin:center;transform:scaleY(.5)}
