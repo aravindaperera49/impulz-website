@@ -188,3 +188,14 @@ header>.header-whatsapp{display:inline-flex;align-items:center;justify-content:c
 #contact .contact-orbit-one{width:540px;height:540px;right:-260px;top:-160px;box-shadow:0 0 0 64px rgba(255,163,93,.025),0 0 0 130px rgba(255,163,93,.02)}
 #contact .contact-orbit-two{width:330px;height:330px;left:-210px;bottom:-210px;border-color:rgba(210,83,109,.22);box-shadow:0 0 0 55px rgba(210,83,109,.025)}
 @media(max-width:600px){#contact.contact{padding-top:72px;padding-bottom:80px}#contact .contact-orbit-one{right:-370px}#contact .contact-actions{flex-direction:column}#contact .contact-actions a{width:min(100%,310px)}}
+
+/* About studio photo blended into the background */
+#about.about-studio{position:relative;isolation:isolate;overflow:hidden;min-height:470px;display:flex;align-items:center;background:#101421}
+#about .about-copy{position:relative;z-index:2;max-width:670px;padding:40px 0}
+#about .about-studio-image{position:absolute;z-index:0;inset:0 0 0 36%;background-image:linear-gradient(90deg,#101421 0%,rgba(16,20,33,.83) 16%,rgba(16,20,33,.24) 62%),linear-gradient(0deg,#101421 0%,transparent 22%,transparent 76%,#101421 100%),url('assets/studio-workspace.jpg');background-size:cover;background-position:center;opacity:.75;pointer-events:none}
+#about .about-copy p{position:relative;max-width:650px}
+#contact .contact-content{text-align:left;max-width:1100px;margin:0 auto}
+#contact .contact-content p{margin-left:0;margin-right:0}
+#contact .contact-actions{justify-content:flex-start}
+@media(max-width:800px){#about.about-studio{min-height:unset}#about .about-copy{padding:30px 0}#about .about-studio-image{inset:0;background-image:linear-gradient(90deg,rgba(16,20,33,.94),rgba(16,20,33,.7)),linear-gradient(0deg,#101421,transparent 28%,transparent 75%,#101421),url('assets/studio-workspace.jpg');opacity:.45}}
+@media(max-width:600px){#contact .contact-actions{align-items:stretch}}
