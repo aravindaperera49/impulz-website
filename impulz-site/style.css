@@ -315,3 +315,12 @@ header>.header-whatsapp{display:inline-flex;align-items:center;justify-content:c
 .stats .stats-order-choice .order-heading-button{box-sizing:border-box;width:100%;height:44px;min-height:44px;padding:8px 14px;display:flex;align-items:center;justify-content:center;white-space:nowrap}
 .stats-order-choice p{margin-top:0}
 @media(max-width:480px){.stats .stats-order-choice .order-heading-button{font-size:13px}}
+
+/* Unified portfolio presentation: consistent frames, no cropping of client artwork */
+#portfolio .category-card{background:#111827}
+#portfolio .category-card>img{width:100%;aspect-ratio:16/10;height:auto;object-fit:contain;object-position:center;display:block;background:radial-gradient(ellipse at 50% 45%,#263650 0%,#141d2e 65%,#101724 100%);padding:12px;box-sizing:border-box}
+#portfolio .category-card:hover>img{transform:scale(1.025)}
+#gallery-thumbs button{background:#141d2e}
+#gallery-thumbs img{object-fit:contain;object-position:center;background:#141d2e;padding:3px;box-sizing:border-box}
+.gallery-stage #large{object-fit:contain;object-position:center;background:#101724}
+@media(max-width:600px){#portfolio .category-card>img{padding:8px}}
