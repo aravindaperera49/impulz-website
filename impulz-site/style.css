@@ -220,3 +220,13 @@ header>.header-whatsapp{display:inline-flex;align-items:center;justify-content:c
 .policy-body a,footer a{color:#ffac58;text-decoration:underline;text-decoration-color:#ffac5860;text-underline-offset:3px}
 .policy-body a:hover,footer a:hover{color:#ffcc95}
 @media(max-width:600px){.policy-hero{padding-top:65px;padding-bottom:45px}.policy-body{padding-top:45px;padding-bottom:75px}.policy-hero>p{font-size:15px}}
+
+/* Refined, compact typography for the legal page */
+.policy-hero{padding-top:68px;padding-bottom:42px}
+.policy-hero h1{font-size:clamp(38px,5vw,62px);margin:12px 0 18px}
+.policy-hero>p{font-size:15px;line-height:1.7;max-width:700px}
+.policy-hero .policy-updated{font-size:12px;margin-top:16px}
+.policy-body{padding-top:42px;padding-bottom:78px}
+.policy-body h2{font-size:clamp(19px,2vw,23px);line-height:1.35;margin:30px 0 9px}
+.policy-body p{font-size:14px;line-height:1.75;margin-bottom:14px}
+@media(max-width:600px){.policy-hero{padding-top:48px;padding-bottom:34px}.policy-body{padding-top:32px;padding-bottom:55px}.policy-hero>p{font-size:14px}}
