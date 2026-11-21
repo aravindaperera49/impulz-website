@@ -140,3 +140,16 @@ header>.header-whatsapp{display:inline-flex;align-items:center;justify-content:c
 .pricing-details ul{font-size:15px;line-height:1.65;gap:14px 24px}
 .pricing-details li::before{top:.23em}
 @media(min-width:1251px) and (max-width:1550px){.stats{grid-template-columns:repeat(3,minmax(110px,1fr)) minmax(520px,2.6fr);gap:12px}.stats-order-options{padding-left:18px}}
+
+/* More prominent ordering choice heading and Fiverr wordmark */
+.stats-order-options h3{font-size:clamp(19px,1.55vw,23px);font-weight:800;letter-spacing:-.025em;line-height:1.3;margin-bottom:17px}
+.stats-order-options h3 span{background:linear-gradient(100deg,#f17724,#ffb52e);-webkit-background-clip:text;background-clip:text;color:transparent}
+.stats-order-choice .fiverr-logo-heading{display:flex;align-items:center;gap:7px;min-height:27px;flex-wrap:wrap}
+.fiverr-logo-prefix{font-size:15px;font-weight:700}
+.fiverr-wordmark{width:78px;height:25px;display:inline-block;vertical-align:middle;overflow:visible}
+.stats-order-choice .stats-order-tag{font-weight:600}
+/* Clicking Work Directly draws attention to services without opening a payment page */
+#services{transition:background-color .4s,box-shadow .4s}
+#services.services-selected{background:linear-gradient(110deg,#0d204b65,#f1772410 75%);box-shadow:inset 0 0 0 2px #f17724,inset 0 0 45px #f1772420;border-radius:14px}
+#services.services-selected .pricing-intro h2{transition:text-shadow .3s;text-shadow:0 0 22px #f1772480}
+@media(prefers-reduced-motion:reduce){#services,#services.services-selected .pricing-intro h2{transition:none}}
