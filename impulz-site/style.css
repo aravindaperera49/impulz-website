@@ -286,3 +286,7 @@ header>.header-whatsapp{display:inline-flex;align-items:center;justify-content:c
 
 /* Halve the thickness of the flowing silk ribbons without changing their length or pointed ends */
 .hero .hero-energy-swoosh .hero-graphic-back > path{transform-box:fill-box;transform-origin:center;transform:scaleY(.5)}
+
+/* Steeper, more upright lightning-bolt composition */
+.hero .hero-energy-swoosh .hero-graphic-back{transform-box:view-box;transform-origin:50% 50%;transform:rotate(-24deg)}
+@media(max-width:650px){.hero .hero-energy-swoosh .hero-graphic-back{transform:rotate(-20deg)}}
