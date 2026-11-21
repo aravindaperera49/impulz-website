@@ -160,3 +160,16 @@ header>.header-whatsapp{display:inline-flex;align-items:center;justify-content:c
 .stats-order-choice .fiverr-logo-heading{gap:7px}
 .fiverr-logo-prefix{line-height:28px}
 .fiverr-wordmark{height:24px;width:78px;flex:none;vertical-align:middle}
+
+/* Horizontal service carousel with keyboard, swipe and arrow navigation */
+.pricing-carousel{position:relative;min-width:0;grid-column:2}
+.pricing-carousel .pricing-grid{display:grid;grid-auto-flow:column;grid-auto-columns:calc((100% - 36px)/4);grid-template-columns:none;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;scrollbar-width:none;overscroll-behavior-x:contain;padding:4px 0 8px}
+.pricing-carousel .pricing-grid::-webkit-scrollbar{display:none}
+.pricing-carousel .price-card{scroll-snap-align:start;min-width:0}
+.pricing-arrow{position:absolute;top:50%;transform:translateY(-50%);z-index:2;width:38px;height:48px;border:1px solid #ffffff40;border-radius:10px;background:#18233be8;color:#fff;font-size:34px;line-height:1;cursor:pointer;display:grid;place-items:center;box-shadow:0 5px 18px #0008;transition:background .2s,opacity .2s}
+.pricing-arrow:hover:not(:disabled){background:#f17724}
+.pricing-arrow:disabled{opacity:.24;cursor:default}
+.pricing-prev{left:-19px}.pricing-next{right:-19px}
+@media(max-width:1100px){.pricing-carousel{grid-column:1/-1}}
+@media(max-width:650px){.pricing-carousel .pricing-grid{grid-auto-columns:calc((100% - 12px)/2);grid-template-columns:none}}
+@media(max-width:420px){.pricing-carousel .pricing-grid{grid-auto-columns:85%;grid-template-columns:none}.pricing-prev{left:-9px}.pricing-next{right:-9px}}
