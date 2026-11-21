@@ -24,7 +24,7 @@ async function handle({request,env}) {
  if(method==='GET'&&route==='invite'){const token=url.searchParams.get('token')||'';if(!/^[a-f0-9]{64}$/.test(token))return json({error:'Invalid invitation'},404);const row=await env.DB.prepare('SELECT client_name,company,expires_at,used_at,revoked_at FROM invitations WHERE token_hash=?').bind(await hash(token)).first();if(!row||row.expires_at<now()||row.used_at||row.revoked_at)return json({error:'This invitation is invalid, expired or already used'},404);return json({client_name:row.client_name,company:row.company})}
  if(method==='POST'&&route==='submit'){
   const b=await request.json().catch(()=>({}));const token=String(b.token||''),name=String(b.name||'').trim(),company=String(b.company||'').trim(),quote=String(b.quote||'').trim(),rating=Number(b.rating),permission=String(b.permission||'');
-  if(!/^[a-f0-9]{64}$/.test(token)||!name||name.length>100||company.length>120||quote.length<15||quote.length>2000||!Number.isInteger(rating)||rating<1||rating>5||!['yes','anonymous','no'].includes(permission))return json({error:'Please complete all required fields'},400);
+  if(!/^[a-f0-9]{64}$/.test(token)||!name||name.length>100||company.length>120||quote.length<15||quote.length>2000||!Number.isFinite(rating)||rating<0.2||rating>5||Math.abs(rating*5-Math.round(rating*5))>1e-7||!['yes','anonymous','no'].includes(permission))return json({error:'Please complete all required fields'},400);
   const tokenHash=await hash(token),row=await env.DB.prepare('SELECT id FROM invitations WHERE token_hash=? AND expires_at>? AND used_at IS NULL AND revoked_at IS NULL').bind(tokenHash,now()).first();
   if(!row)return json({error:'Invitation unavailable'},409);
   const id=uid(),ts=now();
