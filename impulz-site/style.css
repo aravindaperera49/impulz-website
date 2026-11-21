@@ -199,3 +199,9 @@ header>.header-whatsapp{display:inline-flex;align-items:center;justify-content:c
 #contact .contact-actions{justify-content:flex-start}
 @media(max-width:800px){#about.about-studio{min-height:unset}#about .about-copy{padding:30px 0}#about .about-studio-image{inset:0;background-image:linear-gradient(90deg,rgba(16,20,33,.94),rgba(16,20,33,.7)),linear-gradient(0deg,#101421,transparent 28%,transparent 75%,#101421),url('assets/studio-workspace.jpg');opacity:.45}}
 @media(max-width:600px){#contact .contact-actions{align-items:stretch}}
+
+/* About heading orange gradient; align contact copy to section's left gutter */
+#about .about-creative-accent{background:linear-gradient(100deg,#f17724 5%,#ffb52e 90%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:#f17724}
+#contact .contact-content{width:100%;max-width:none;margin:0;text-align:left}
+#contact .contact-content h2,#contact .contact-content p{margin-left:0}
+#contact .contact-actions{justify-content:flex-start;margin-left:0}
