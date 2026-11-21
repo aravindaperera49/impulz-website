@@ -253,3 +253,12 @@ header>.header-whatsapp{display:inline-flex;align-items:center;justify-content:c
 /* Hard-clip blue quote button paint to the pill silhouette, preventing the left-edge sliver */
 .hero .actions > .button,
 #services .pricing-quote{border-radius:999px;overflow:hidden;clip-path:inset(0 round 999px);-webkit-clip-path:inset(0 round 999px);background:linear-gradient(115deg,#00358c,#0878ef);border:0;isolation:isolate}
+
+/* Floating luminous arcs around hero mockup; preserve original artwork */
+.hero .hero-art{position:relative;isolation:isolate}
+.hero .hero-art>img{position:relative;z-index:1}
+.hero .hero-energy-swoosh{position:absolute;z-index:2;pointer-events:none;left:-11%;top:-9%;width:124%;height:118%;overflow:visible;opacity:.76;filter:drop-shadow(0 0 8px rgba(31,160,255,.25));animation:hero-swoosh-float 8s ease-in-out infinite alternate}
+.hero .hero-swoosh-halo{opacity:.58}
+@keyframes hero-swoosh-float{from{transform:translate3d(-5px,6px,0);opacity:.65}to{transform:translate3d(8px,-7px,0);opacity:.83}}
+@media(max-width:650px){.hero .hero-energy-swoosh{left:-5%;top:-5%;width:110%;height:110%;opacity:.55}}
+@media(prefers-reduced-motion:reduce){.hero .hero-energy-swoosh{animation:none}}
