@@ -330,3 +330,11 @@ header>.header-whatsapp{display:inline-flex;align-items:center;justify-content:c
 
 /* Flyers & Posters category cover: fill the thumbnail frame edge to edge. */
 #portfolio .category-card.flyer-category-card>img{padding:0;object-fit:cover;background:#111827}
+
+/* Full-width portfolio lightbox: images span the available gallery width, with navigation overlaid. */
+#lightbox .gallery-stage{position:relative;display:block;min-width:0}
+#lightbox .gallery-stage #large{display:block;width:100%;height:auto;max-height:none;object-fit:fill;border-radius:8px}
+#lightbox .gallery-stage button{position:absolute;top:50%;transform:translateY(-50%);z-index:2;background:#0b101ecc;box-shadow:0 2px 12px #0008}
+#lightbox .gallery-stage #prev{left:12px}
+#lightbox .gallery-stage #next{right:12px}
+@media(max-width:600px){#lightbox .gallery-stage #prev{left:5px}#lightbox .gallery-stage #next{right:5px}}
