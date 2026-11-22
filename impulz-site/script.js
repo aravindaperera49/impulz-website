@@ -1,13 +1,13 @@
 document.querySelectorAll('[data-wa]').forEach(a=>{a.href='https://wa.me/94719696094?text='+encodeURIComponent('Hi IMPULZ! I would like to discuss '+a.dataset.wa+'.');a.target='_blank';a.rel='noopener'});
 const groups=[
 {name:'Logos & Brand Identity Kits',ids:[28,25,26,27,29,20,21,51,58]},
-{name:'Flyers & Posters',ids:[38,39,40,41,42,43,49,1,2,3,4,7,13,14,16,17,22,30,36,55]},
+{name:'Flyers & Posters',ids:Array.from({length:25},(_,i)=>'flyer-'+String(i+1).padStart(2,'0'))},
 {name:'Brochures & Company Profiles',ids:[18,19,24,15,54]},
 {name:'Social Media Designs',ids:[46,45,47,48,5,6,9,12,37,50,44]},
 {name:'Magazines & eBooks',ids:[35,31,32,33,34]},
 {name:'Infographics & Presentations',ids:[10,8,11]}
 ];
-const pathFor=n=>'assets/portfolio/project-'+String(n).padStart(2,'0')+'.webp';
+const pathFor=n=>typeof n==='string'?'assets/portfolio/'+n+'.webp':'assets/portfolio/project-'+String(n).padStart(2,'0')+'.webp';
 const grid=document.getElementById('gallery'),dialog=document.getElementById('lightbox'),large=document.getElementById('large'),thumbs=document.getElementById('gallery-thumbs'),counter=document.getElementById('gallery-count');
 let current=null,index=0,opener=null,touchX=null;
 function show(n){if(!current)return;index=(n+current.ids.length)%current.ids.length;large.src=pathFor(current.ids[index]);large.alt=current.name+' — project '+(index+1);counter.textContent=(index+1)+' / '+current.ids.length;Array.from(thumbs.children).forEach((b,i)=>{b.classList.toggle('selected',i===index);b.setAttribute('aria-current',i===index?'true':'false')});const b=thumbs.children[index];if(b)thumbs.scrollLeft=b.offsetLeft-thumbs.offsetLeft-(thumbs.clientWidth-b.clientWidth)/2;}
