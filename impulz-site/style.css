@@ -327,3 +327,6 @@ header>.header-whatsapp{display:inline-flex;align-items:center;justify-content:c
 
 /* Slightly tighter spacing between the three homepage hero title lines */
 .hero h1.hero-flare-title{line-height:.90}
+
+/* Flyers & Posters category cover: fill the thumbnail frame edge to edge. */
+#portfolio .category-card.flyer-category-card>img{padding:0;object-fit:cover;background:#111827}
