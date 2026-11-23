@@ -1,7 +1,7 @@
 document.querySelectorAll('[data-wa]').forEach(a=>{a.href='https://wa.me/94719696094?text='+encodeURIComponent('Hi IMPULZ! I would like to discuss '+a.dataset.wa+'.');a.target='_blank';a.rel='noopener'});
 const groups=[
 {name:'Logos & Brand Identity Kits',ids:[28,25,26,27,29,20,21,51,58]},
-{name:'Flyers & Posters',ids:Array.from({length:25},(_,i)=>'flyer-'+String(i+1).padStart(2,'0'))},
+{name:'Flyers & Posters',ids:Array.from({length:28},(_,i)=>'flyer-'+String(i+1).padStart(2,'0'))},
 {name:'Brochures & Company Profiles',ids:[18,19,24,15,54]},
 {name:'Social Media Designs',ids:[46,45,47,48,5,6,9,12,37,50,44]},
 {name:'Magazines & eBooks',ids:[35,31,32,33,34]},
