@@ -338,3 +338,6 @@ header>.header-whatsapp{display:inline-flex;align-items:center;justify-content:c
 #lightbox .gallery-stage #prev{left:12px}
 #lightbox .gallery-stage #next{right:12px}
 @media(max-width:600px){#lightbox .gallery-stage #prev{left:5px}#lightbox .gallery-stage #next{right:5px}}
+
+/* Brushed metallic silver lettering for IMPACTFUL and DESIGN; VISUAL retains its original gradient. */
+.hero h1 .metallic-silver{display:inline-block;color:#d9e0e9;background:repeating-linear-gradient(0deg,transparent 0px,#ffffff0b 1px,transparent 2px,transparent 4px),linear-gradient(175deg,#f9fcff 0%,#d7dfe9 12%,#798492 24%,#f4f8fc 37%,#a0aab7 49%,#e9eff6 61%,#707b8a 73%,#dfe6ed 87%,#f9fbff 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;filter:drop-shadow(0 2px 1px #050b18aa)}
