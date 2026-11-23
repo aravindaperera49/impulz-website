@@ -338,3 +338,6 @@ header>.header-whatsapp{display:inline-flex;align-items:center;justify-content:c
 #lightbox .gallery-stage #prev{left:12px}
 #lightbox .gallery-stage #next{right:12px}
 @media(max-width:600px){#lightbox .gallery-stage #prev{left:5px}#lightbox .gallery-stage #next{right:5px}}
+
+/* Logo category cover: edge-to-edge image without inset padding. */
+#portfolio .category-card.logo-category-card>img{padding:0;object-fit:cover;background:#111827}
