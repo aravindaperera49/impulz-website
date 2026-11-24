@@ -349,3 +349,23 @@ header>.header-whatsapp{display:inline-flex;align-items:center;justify-content:c
 #lightbox.social-gallery #gallery-thumbs img{padding:0;object-fit:cover}
 #lightbox.social-gallery #gallery-title{margin-left:12px}
 #lightbox.social-gallery #close{margin-right:12px}
+
+/* Cinematic portfolio collage hero */
+.hero.hero-portfolio{position:relative;isolation:isolate;display:flex;align-items:center;justify-content:center;min-height:680px;overflow:hidden;background:#0b101e;text-align:center;color:#fff;gap:0}
+.hero.hero-portfolio:before{display:none}
+.hero.hero-portfolio:after{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;background:linear-gradient(0deg,#0b101e 0%,transparent 23%,transparent 78%,#0b101e88 100%),radial-gradient(ellipse at center,#070b16e8 0%,#070b16c9 35%,#070b1666 100%)}
+.hero-collage{position:absolute;inset:-10% -8%;z-index:0;display:flex;flex-direction:column;justify-content:center;gap:12px;transform:rotate(-7deg) scale(1.08);pointer-events:none;opacity:.85}
+.hero-collage-row{overflow:hidden;flex:none}
+.hero-collage-track{display:flex;width:max-content;animation:impulz-collage-slide 65s linear infinite;will-change:transform}
+.hero-collage-row:nth-child(2) .hero-collage-track{animation-direction:reverse;animation-duration:76s}
+.hero-collage-row:nth-child(3) .hero-collage-track{animation-duration:88s}
+.hero-collage-set{display:flex;gap:12px;padding-right:12px;flex:none}
+.hero-collage-set img{display:block;width:clamp(220px,25vw,390px);height:clamp(145px,16vw,235px);object-fit:cover;border-radius:9px;border:1px solid #ffffff20}
+@keyframes impulz-collage-slide{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.hero.hero-portfolio .hero-portfolio-copy{position:relative;z-index:2;width:min(100%,850px);padding:35px 12px}
+.hero.hero-portfolio h1{margin-inline:auto;text-shadow:0 5px 30px #0008}
+.hero.hero-portfolio p{color:#e2e8f5;max-width:650px;margin:24px auto;text-shadow:0 2px 10px #000}
+.hero.hero-portfolio .actions{justify-content:center;flex-wrap:wrap}
+.hero.hero-portfolio .outline{background:#0b101e99;border-color:#ffffff88}
+@media(max-width:650px){.hero.hero-portfolio{min-height:570px}.hero-collage{inset:-8% -15%;gap:8px}.hero-collage-set{gap:8px;padding-right:8px}.hero-collage-set img{width:220px;height:165px}.hero.hero-portfolio .hero-portfolio-copy{padding:24px 0}.hero.hero-portfolio p{font-size:16px}}
+@media(prefers-reduced-motion:reduce){.hero-collage-track{animation:none}}
