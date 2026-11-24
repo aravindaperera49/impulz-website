@@ -413,3 +413,7 @@ main .stats{padding:20px 5%;gap:14px}.stats strong{font-size:24px}.stats span{fo
 .brand-service-ticker:hover .brand-service-track{animation-play-state:paused}
 @media(max-width:650px){.brand-service-ticker{padding:8px 0}.brand-service-set span{font-size:11px;gap:15px;padding-right:15px}}
 @media(prefers-reduced-motion:reduce){.brand-service-track{animation:none}.brand-service-ticker{overflow-x:auto}}
+
+/* Keep the two hero copy paragraphs together on all screen sizes. */
+.hero.hero-portfolio .hero-portfolio-copy p:has(+ p){margin-bottom:0}
+.hero.hero-portfolio .hero-portfolio-copy p+p{margin-top:0}
