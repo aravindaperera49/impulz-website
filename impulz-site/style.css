@@ -417,3 +417,5 @@ main .stats{padding:20px 5%;gap:14px}.stats strong{font-size:24px}.stats span{fo
 /* Keep the two hero copy paragraphs together on all screen sizes. */
 .hero.hero-portfolio .hero-portfolio-copy p:has(+ p){margin-bottom:0}
 .hero.hero-portfolio .hero-portfolio-copy p+p{margin-top:0}
+
+#portfolio .category-placeholder{width:100%;aspect-ratio:16/10;background:#141d2e}#portfolio .category-card:disabled{cursor:default;opacity:1}
