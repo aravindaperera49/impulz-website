@@ -369,3 +369,12 @@ header>.header-whatsapp{display:inline-flex;align-items:center;justify-content:c
 .hero.hero-portfolio .outline{background:#0b101e99;border-color:#ffffff88}
 @media(max-width:650px){.hero.hero-portfolio{min-height:570px}.hero-collage{inset:-8% -15%;gap:8px}.hero-collage-set{gap:8px;padding-right:8px}.hero-collage-set img{width:220px;height:165px}.hero.hero-portfolio .hero-portfolio-copy{padding:24px 0}.hero.hero-portfolio p{font-size:16px}}
 @media(prefers-reduced-motion:reduce){.hero-collage-track{animation:none}}
+
+/* Left-aligned hero content over animated portfolio. */
+.hero.hero-portfolio{justify-content:flex-start;text-align:left}
+.hero.hero-portfolio .hero-portfolio-copy{padding-left:0;padding-right:0}
+.hero.hero-portfolio h1{margin-inline:0}
+.hero.hero-portfolio p{margin:24px 0}
+.hero.hero-portfolio .actions{justify-content:flex-start}
+.hero.hero-portfolio:after{background:linear-gradient(0deg,#0b101e 0%,transparent 23%,transparent 78%,#0b101e88 100%),linear-gradient(90deg,#070b16ed 0%,#070b16cc 35%,#070b1666 75%,#070b1644 100%)}
+@media(max-width:650px){.hero.hero-portfolio .actions a{max-width:100%;white-space:normal;text-align:left}.hero.hero-portfolio:after{background:linear-gradient(90deg,#070b16e0,#070b1688)}}
