@@ -385,3 +385,8 @@ header>.header-whatsapp{display:inline-flex;align-items:center;justify-content:c
 
 /* Hero consultation CTA matches the VISUAL headline gradient. */
 .hero.hero-portfolio .actions .button{background:linear-gradient(100deg,#f17724,#ffb52e);color:#101724;border-color:transparent}
+
+/* Two-line hero headline, sized to fit on desktop and mobile. */
+.hero.hero-portfolio h1.hero-flare-title{font-size:clamp(36px,5.6vw,86px);line-height:.98}
+.hero.hero-portfolio .hero-title-line{white-space:nowrap}
+@media(max-width:650px){.hero.hero-portfolio h1.hero-flare-title{font-size:clamp(23px,7.4vw,48px)}}
