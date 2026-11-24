@@ -341,3 +341,11 @@ header>.header-whatsapp{display:inline-flex;align-items:center;justify-content:c
 
 /* Logo category cover: edge-to-edge image without inset padding. */
 #portfolio .category-card.logo-category-card>img{padding:0;object-fit:cover;background:#111827}
+
+/* Social media portfolio: edge-to-edge cover, full-width artwork and flush thumbnails. */
+#portfolio .category-card.social-category-card>img{padding:0;object-fit:cover;background:#111827}
+#lightbox.social-gallery{padding-left:0;padding-right:0}
+#lightbox.social-gallery .gallery-stage #large{width:100%;height:auto;object-fit:contain;padding:0;border-radius:0}
+#lightbox.social-gallery #gallery-thumbs img{padding:0;object-fit:cover}
+#lightbox.social-gallery #gallery-title{margin-left:12px}
+#lightbox.social-gallery #close{margin-right:12px}
