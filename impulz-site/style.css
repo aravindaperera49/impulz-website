@@ -419,3 +419,12 @@ main .stats{padding:20px 5%;gap:14px}.stats strong{font-size:24px}.stats span{fo
 .hero.hero-portfolio .hero-portfolio-copy p+p{margin-top:0}
 
 #portfolio .category-placeholder{width:100%;aspect-ratio:16/10;background:#141d2e}#portfolio .category-card:disabled{cursor:default;opacity:1}
+
+/* Creative agency marquee: alternating solid, outline and orange typography. */
+.brand-service-ticker{background:#0b101e;color:#fff;padding:13px 0;position:relative;border-block:1px solid #ffffff12;mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent)}
+.brand-service-set span{font-size:clamp(18px,2.15vw,30px);font-weight:800;font-style:italic;letter-spacing:.045em;gap:26px;padding-right:26px;line-height:1.15}
+.brand-service-set span:nth-child(3n+2){color:transparent;-webkit-text-stroke:1px #a3a8b1}
+.brand-service-set span:nth-child(3n){color:#f17724}
+.brand-service-set span:after{width:4px;height:4px;background:#f17724;-webkit-text-stroke:0}
+.brand-service-track{animation-duration:140s}
+@media(max-width:650px){.brand-service-ticker{padding:10px 0}.brand-service-set span{font-size:18px;gap:18px;padding-right:18px}}
