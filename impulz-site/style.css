@@ -378,3 +378,7 @@ header>.header-whatsapp{display:inline-flex;align-items:center;justify-content:c
 .hero.hero-portfolio .actions{justify-content:flex-start}
 .hero.hero-portfolio:after{background:linear-gradient(0deg,#0b101e 0%,transparent 23%,transparent 78%,#0b101e88 100%),linear-gradient(90deg,#070b16ed 0%,#070b16cc 35%,#070b1666 75%,#070b1644 100%)}
 @media(max-width:650px){.hero.hero-portfolio .actions a{max-width:100%;white-space:normal;text-align:left}.hero.hero-portfolio:after{background:linear-gradient(90deg,#070b16e0,#070b1688)}}
+
+/* Match Choose exactly; prevent lens flare or inherited text effects from altering the gradient. */
+.hero.hero-portfolio h1 .brand-gradient{background:linear-gradient(100deg,#f17724,#ffb52e)!important;-webkit-background-clip:text!important;background-clip:text!important;color:transparent!important;-webkit-text-fill-color:transparent!important;text-shadow:none!important;filter:none!important;opacity:1}
+.hero.hero-portfolio .hero-lens-flare{display:none!important}
