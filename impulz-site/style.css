@@ -402,3 +402,14 @@ main section{padding:36px 5%;scroll-margin-top:66px}h1{font-size:32px}h2{font-si
 main .stats{padding:20px 5%;gap:14px}.stats strong{font-size:24px}.stats span{font-size:12px}.stats-order-options h3{font-size:18px}.stats .stats-order-choice .order-heading-button{font-size:12px;padding:8px 10px}.stats-order-choice p{font-size:13px}
 .pricing-intro h2,.partnership-section h2,.testimonial-intro h2{font-size:25px}.pricing-intro p,.partnership-section p{font-size:14px}.pricing-section,.partnership-section,.testimonial-strip{gap:14px}.price-card{padding:14px 10px}.price-card h3{font-size:16px}.price-amount{font-size:24px;margin-bottom:10px}.price-icon{width:34px;height:34px;margin-bottom:9px}.partner-story-copy{padding:20px 16px}.partner-card{padding:14px 10px}.testimonial-center{padding:20px 18px 16px 34px;min-height:unset}.testimonial-project{padding:16px}.testimonial-project h3{font-size:17px}.cards{gap:12px;margin:18px 0}.cards article{padding:16px}.contact h2{font-size:30px}footer{padding:22px 5%;gap:12px;font-size:12px}footer img{width:125px}
 }
+
+/* Thin continuous services ticker between hero and portfolio. */
+.brand-service-ticker{overflow:hidden;background:linear-gradient(100deg,#f17724,#ffb52e);color:#101724;padding:10px 0;line-height:1.3}
+.brand-service-track{display:flex;width:max-content;animation:brand-services-left 48s linear infinite}
+.brand-service-set{display:flex;align-items:center;flex:none}
+.brand-service-set span{display:inline-flex;align-items:center;gap:22px;padding-right:22px;font-size:13px;font-weight:800;letter-spacing:.055em;text-transform:uppercase;white-space:nowrap}
+.brand-service-set span:after{content:"✦";font-size:12px;opacity:.7}
+@keyframes brand-services-left{to{transform:translateX(-50%)}}
+.brand-service-ticker:hover .brand-service-track{animation-play-state:paused}
+@media(max-width:650px){.brand-service-ticker{padding:8px 0}.brand-service-set span{font-size:11px;gap:15px;padding-right:15px}}
+@media(prefers-reduced-motion:reduce){.brand-service-track{animation:none}.brand-service-ticker{overflow-x:auto}}
