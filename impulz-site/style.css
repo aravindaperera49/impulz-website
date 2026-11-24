@@ -17,7 +17,7 @@ header{background:#090c17ed;color:#f4f5fb;border-color:#ffffff16;backdrop-filter
 /* Full-page woven grain and brand-gradient headline */
 body{background-color:#090c17;background-image:radial-gradient(ellipse 900px 700px at 80% 280px,#173a7688,transparent 100%),radial-gradient(ellipse 700px 650px at 10% 1100px,#26365b55,transparent 100%),url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='grain'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.72' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Cpath fill='%23fff' filter='url(%23grain)' opacity='.18' d='M0 0h180v180H0z'/%3E%3C/svg%3E"),repeating-linear-gradient(135deg,#ffffff05 0 1px,transparent 1px 6px);background-blend-mode:normal,normal,soft-light,normal;background-repeat:no-repeat,no-repeat,repeat,repeat}
 .hero h1{font-size:clamp(58px,6.6vw,108px);line-height:.98;letter-spacing:-.055em}
-.hero h1 .brand-gradient{display:inline-block;color:#ff9d26;background:linear-gradient(35deg,#f5f5ff 0%,#eac5bb 18%,#c51f2b 48%,#f17724 77%,#ffb52e 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.hero h1 .brand-gradient{display:inline-block;color:#ff9d26;background:linear-gradient(100deg,#f17724,#ffb52e);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
 @media(max-width:850px){.hero h1{font-size:clamp(54px,10vw,88px)}}
 @media(max-width:480px){.hero h1{font-size:clamp(44px,11vw,60px)}}
 
