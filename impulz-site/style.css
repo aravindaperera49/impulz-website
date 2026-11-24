@@ -382,3 +382,6 @@ header>.header-whatsapp{display:inline-flex;align-items:center;justify-content:c
 /* Match Choose exactly; prevent lens flare or inherited text effects from altering the gradient. */
 .hero.hero-portfolio h1 .brand-gradient{background:linear-gradient(100deg,#f17724,#ffb52e)!important;-webkit-background-clip:text!important;background-clip:text!important;color:transparent!important;-webkit-text-fill-color:transparent!important;text-shadow:none!important;filter:none!important;opacity:1}
 .hero.hero-portfolio .hero-lens-flare{display:none!important}
+
+/* Hero consultation CTA matches the VISUAL headline gradient. */
+.hero.hero-portfolio .actions .button{background:linear-gradient(100deg,#f17724,#ffb52e);color:#101724;border-color:transparent}
