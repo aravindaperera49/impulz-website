@@ -85,5 +85,61 @@ window.impulzTestimonials = [
     "quote": "He provided quick delivery and fast response time. He exceeded my expectations!",
     "rating": 5,
     "source": "Fiverr · Founder’s client"
+  },
+  {
+    "name": "cbrn59",
+    "company": "United States",
+    "quote": "He did amazing work and was cooperative. Would commission again!",
+    "rating": 5,
+    "source": "Fiverr · Founder’s client"
+  },
+  {
+    "name": "davidfein",
+    "company": "United States",
+    "quote": "Thank you. We are very happy with the design. Looking for using it for our clients.",
+    "rating": 5,
+    "source": "Fiverr · Founder’s client"
+  },
+  {
+    "name": "darkwindowbooks",
+    "company": "Canada",
+    "quote": "Quick and professional work. Thank you! :)",
+    "rating": 5,
+    "source": "Fiverr · Founder’s client"
+  },
+  {
+    "name": "hauni90",
+    "company": "Germany",
+    "quote": "Perfekt 💯 kann man empfehlen 💯🙏🏼",
+    "rating": 5,
+    "source": "Fiverr · Founder’s client"
+  },
+  {
+    "name": "rudgear",
+    "company": "United States",
+    "quote": "Always a pleasure working with you. Quick turn around and responsiveness.",
+    "rating": 5,
+    "source": "Fiverr · Founder’s client"
+  },
+  {
+    "name": "jpierce402",
+    "company": "United States",
+    "quote": "Yet again, Aravinda went above and beyond. I'll be back soon!",
+    "rating": 5,
+    "source": "Fiverr · Founder’s client"
+  },
+  {
+    "name": "ajaxamillion",
+    "company": "United Kingdom",
+    "quote": "Easy communication to get to get to the \ndesired result",
+    "rating": 5,
+    "source": "Fiverr · Founder’s client"
+  },
+  {
+    "name": "livecoastal",
+    "company": "United States",
+    "quote": "Aravinda is the best! I explain what I need and he makes it happen. Quick turnaround time, exceptional designs with great ideas. I will continue to work with him for all my advertising needs!",
+    "rating": 5,
+    "source": "Fiverr · Founder’s client"
   }
 ];
