@@ -43,11 +43,11 @@ function startPortfolioPreview(card,img,group,order){
     card.style.position='relative';
     Object.assign(overlay.style,{position:'absolute',left:(ir.left-cr.left-card.clientLeft)+'px',top:(ir.top-cr.top-card.clientTop)+'px',width:ir.width+'px',height:ir.height+'px',maxWidth:'none',boxSizing:'border-box',objectFit:cs.objectFit,objectPosition:cs.objectPosition,padding:cs.padding,background:cs.background,borderRadius:cs.borderRadius,pointerEvents:'none',zIndex:'1',clipPath:'inset(0 0 0 100%)'});
     overlay.src=src;overlay.removeAttribute('loading');card.append(overlay);
-    try{await overlay.animate([{clipPath:'inset(0 0 0 100%)'},{clipPath:'inset(0 0 0 0)'}],{duration:1800,easing:'cubic-bezier(.25,.65,.35,1)',fill:'forwards'}).finished;img.src=src;position=next;await img.decode().catch(()=>{});}finally{overlay.remove()}
+    try{await overlay.animate([{clipPath:'inset(0 0 0 100%)'},{clipPath:'inset(0 0 0 0)'}],{duration:3200,easing:'cubic-bezier(.25,.65,.35,1)',fill:'forwards'}).finished;img.src=src;position=next;await img.decode().catch(()=>{});}finally{overlay.remove()}
    }
   }catch{position=next}finally{busy=false;schedule()}
  }
- const observer=new IntersectionObserver(entries=>{visible=entries[0].isIntersecting;if(visible)schedule(100+order*220);else clearTimeout(timer)},{threshold:.15});
+ const observer=new IntersectionObserver(entries=>{visible=entries[0].isIntersecting;if(visible)schedule(3000+order*220);else clearTimeout(timer)},{threshold:.15});
  observer.observe(card);
  reduced.addEventListener('change',()=>{if(reduced.matches)clearTimeout(timer);else schedule(100)});
 }
