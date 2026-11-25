@@ -24,29 +24,30 @@ if(directServicesTrigger){let servicesHighlightTimer;directServicesTrigger.addEv
 const serviceSlider=document.getElementById('pricing-slider');
 if(serviceSlider){const prev=document.querySelector('.pricing-prev'),next=document.querySelector('.pricing-next');const getStep=()=>{const card=serviceSlider.querySelector('.price-card');return card?card.getBoundingClientRect().width+parseFloat(getComputedStyle(serviceSlider).gap||0):serviceSlider.clientWidth};const update=()=>{prev.disabled=serviceSlider.scrollLeft<=2;next.disabled=serviceSlider.scrollLeft+serviceSlider.clientWidth>=serviceSlider.scrollWidth-3};prev.addEventListener('click',()=>serviceSlider.scrollBy({left:-getStep(),behavior:'smooth'}));next.addEventListener('click',()=>serviceSlider.scrollBy({left:getStep(),behavior:'smooth'}));serviceSlider.addEventListener('scroll',update,{passive:true});window.addEventListener('resize',update);serviceSlider.addEventListener('keydown',e=>{if(e.key==='ArrowRight'||e.key==='ArrowLeft'){e.preventDefault();serviceSlider.scrollBy({left:(e.key==='ArrowRight'?1:-1)*getStep(),behavior:'smooth'})}});update()}
 
-/* Visible-only, staggered portfolio previews. Preserve original image layout. */
+
+/* Scroll-activated horizontal image reveals. */
 function startPortfolioPreview(card,img,group,order){
  if(group.ids.length<2||!('IntersectionObserver' in window))return;
  const reduced=matchMedia('(prefers-reduced-motion: reduce)');
- let visible=false,busy=false,timer=null,position=group.ids.findIndex(id=>img.getAttribute('src')===pathFor(id));
- const eligible=()=>visible&&!document.hidden&&!dialog.open&&!reduced.matches&&!card.matches(':hover,:focus-within');
+ let visible=false,busy=false,timer,position=group.ids.findIndex(id=>img.getAttribute('src')===pathFor(id));
+ const eligible=()=>visible&&!document.hidden&&!dialog.open&&!reduced.matches;
  function schedule(delay=4000){clearTimeout(timer);if(visible&&!reduced.matches)timer=setTimeout(tick,delay)}
  async function tick(){
   if(!eligible()||busy){schedule();return}
   busy=true;
   const next=(position+1)%group.ids.length,src=pathFor(group.ids[next]),preload=new Image();
   try{
-   preload.src=src;await preload.decode();
+   await new Promise((resolve,reject)=>{preload.onload=resolve;preload.onerror=reject;preload.src=src});
    if(eligible()){
     const overlay=img.cloneNode(false),ir=img.getBoundingClientRect(),cr=card.getBoundingClientRect(),cs=getComputedStyle(img);
     card.style.position='relative';
-    Object.assign(overlay.style,{position:'absolute',left:(ir.left-cr.left-card.clientLeft)+'px',top:(ir.top-cr.top-card.clientTop)+'px',width:ir.width+'px',height:ir.height+'px',maxWidth:'none',boxSizing:'border-box',objectFit:cs.objectFit,objectPosition:cs.objectPosition,padding:cs.padding,background:cs.background,borderRadius:cs.borderRadius,pointerEvents:'none',zIndex:'1',opacity:'0'});
+    Object.assign(overlay.style,{position:'absolute',left:(ir.left-cr.left-card.clientLeft)+'px',top:(ir.top-cr.top-card.clientTop)+'px',width:ir.width+'px',height:ir.height+'px',maxWidth:'none',boxSizing:'border-box',objectFit:cs.objectFit,objectPosition:cs.objectPosition,padding:cs.padding,background:cs.background,borderRadius:cs.borderRadius,pointerEvents:'none',zIndex:'1',clipPath:'inset(0 0 0 100%)'});
     overlay.src=src;overlay.removeAttribute('loading');card.append(overlay);
-    try{await overlay.animate([{opacity:0},{opacity:1}],{duration:700,easing:'ease-in-out',fill:'forwards'}).finished;img.src=src;position=next;await img.decode().catch(()=>{});}finally{overlay.remove()}
+    try{await overlay.animate([{clipPath:'inset(0 0 0 100%)'},{clipPath:'inset(0 0 0 0)'}],{duration:1800,easing:'cubic-bezier(.25,.65,.35,1)',fill:'forwards'}).finished;img.src=src;position=next;await img.decode().catch(()=>{});}finally{overlay.remove()}
    }
   }catch{position=next}finally{busy=false;schedule()}
  }
- const observer=new IntersectionObserver(entries=>{visible=entries[0].isIntersecting;if(visible)schedule(4000+order*650);else clearTimeout(timer)},{threshold:.25});
+ const observer=new IntersectionObserver(entries=>{visible=entries[0].isIntersecting;if(visible)schedule(100+order*220);else clearTimeout(timer)},{threshold:.15});
  observer.observe(card);
- reduced.addEventListener('change',()=>{if(reduced.matches)clearTimeout(timer);else schedule()});
+ reduced.addEventListener('change',()=>{if(reduced.matches)clearTimeout(timer);else schedule(100)});
 }
