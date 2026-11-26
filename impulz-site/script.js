@@ -30,24 +30,28 @@ function startPortfolioPreview(card,img,group,order){
  if(group.ids.length<2||!('IntersectionObserver' in window))return;
  const reduced=matchMedia('(prefers-reduced-motion: reduce)');
  let visible=false,busy=false,timer,position=group.ids.findIndex(id=>img.getAttribute('src')===pathFor(id));
+ const back=img.cloneNode(false);back.removeAttribute('src');back.removeAttribute('loading');back.alt='';
+ card.style.position='relative';
+ for(const layer of [img,back])Object.assign(layer.style,{position:'absolute',inset:'0',width:'100%',height:'100%',objectFit:getComputedStyle(img).objectFit,pointerEvents:'none',transition:'none'});
+ Object.assign(img.style,{opacity:'1',zIndex:'0'});Object.assign(back.style,{opacity:'0',zIndex:'1'});card.insertBefore(back,img.nextSibling);
+ let front=img,hidden=back;
  const eligible=()=>visible&&!document.hidden&&!dialog.open&&!reduced.matches;
- function schedule(delay=4000){clearTimeout(timer);if(visible&&!reduced.matches)timer=setTimeout(tick,delay)}
+ function schedule(delay=4000+order*180){clearTimeout(timer);if(visible&&!reduced.matches)timer=setTimeout(tick,delay)}
  async function tick(){
-  if(!eligible()||busy){schedule();return}
-  busy=true;
-  const next=(position+1)%group.ids.length,src=pathFor(group.ids[next]),preload=new Image();
+  if(!eligible()||busy){schedule();return}busy=true;
+  const next=(position+1)%group.ids.length;
   try{
-   await new Promise((resolve,reject)=>{preload.onload=resolve;preload.onerror=reject;preload.src=src});
-   if(eligible()){
-    const overlay=img.cloneNode(false),ir=img.getBoundingClientRect(),cr=card.getBoundingClientRect(),cs=getComputedStyle(img);
-    card.style.position='relative';
-    Object.assign(overlay.style,{position:'absolute',left:(ir.left-cr.left-card.clientLeft)+'px',top:(ir.top-cr.top-card.clientTop)+'px',width:ir.width+'px',height:ir.height+'px',maxWidth:'none',boxSizing:'border-box',objectFit:cs.objectFit,objectPosition:cs.objectPosition,padding:cs.padding,background:cs.background,borderRadius:cs.borderRadius,pointerEvents:'none',zIndex:'1',opacity:'0'});
-    overlay.src=src;overlay.removeAttribute('loading');card.append(overlay);
-    try{await overlay.animate([{opacity:0},{opacity:1}],{duration:3200,easing:'ease-in-out',fill:'forwards'}).finished;img.src=src;position=next;await img.decode().catch(()=>{});}finally{overlay.remove()}
-   }
+   hidden.style.transition='none';hidden.style.opacity='0';hidden.style.zIndex='1';front.style.zIndex='0';
+   hidden.src=pathFor(group.ids[next]);
+   await hidden.decode();
+   if(!eligible())return;
+   await new Promise(resolve=>requestAnimationFrame(()=>requestAnimationFrame(resolve)));
+   hidden.style.transition='opacity 3200ms ease-in-out';hidden.style.opacity='1';
+   await new Promise(resolve=>setTimeout(resolve,3300));
+   hidden.style.transition='none';hidden.style.zIndex='0';front.style.transition='none';front.style.opacity='0';front.style.zIndex='1';
+   [front,hidden]=[hidden,front];position=next;
   }catch{position=next}finally{busy=false;schedule()}
  }
- const observer=new IntersectionObserver(entries=>{visible=entries[0].isIntersecting;if(visible)schedule(3000+order*220);else clearTimeout(timer)},{threshold:.15});
- observer.observe(card);
+ const observer=new IntersectionObserver(entries=>{visible=entries[0].isIntersecting;if(visible)schedule(3000+order*850);else clearTimeout(timer)},{threshold:.15});observer.observe(card);
  reduced.addEventListener('change',()=>{if(reduced.matches)clearTimeout(timer);else schedule(100)});
 }
