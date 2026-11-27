@@ -1,4 +1,4 @@
-document.querySelectorAll('[data-wa]').forEach(a=>{a.href='https://wa.me/94719696094?text='+encodeURIComponent('Hi IMPULZ! I would like to discuss '+a.dataset.wa+'.');a.target='_blank';a.rel='noopener'});
+document.querySelectorAll('[data-wa]').forEach(a=>{a.href='https://wa.me/94779443656?text='+encodeURIComponent('Hi IMPULZ! I would like to discuss '+a.dataset.wa+'.');a.target='_blank';a.rel='noopener'});
 const groups=[
 {name:'Logos & Brand Identity Kits',ids:Array.from({length:21},(_,i)=>String(i))},
 {name:'Flyers & Postcards',ids:Array.from({length:28},(_,i)=>'flyer-'+String(i+1).padStart(2,'0'))},
