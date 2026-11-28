@@ -2,7 +2,7 @@ document.querySelectorAll('[data-wa]').forEach(a=>{a.href='https://wa.me/9477944
 const groups=[
 {name:'Logos & Brand Identity Kits',ids:Array.from({length:21},(_,i)=>String(i))},
 {name:'Flyers & Postcards',ids:Array.from({length:28},(_,i)=>'flyer-'+String(i+1).padStart(2,'0'))},
-{name:'Social Media Designs',ids:Array.from({length:18},(_,i)=>'Socialmedia/'+(i+1))},
+{name:'Social Media',ids:Array.from({length:18},(_,i)=>'Socialmedia/'+(i+1))},
 {name:'Display Graphics',ids:Array.from({length:9},(_,i)=>'Displaygraphics/'+(i+1))},
 {name:'Magazines & eBooks',ids:Array.from({length:16},(_,i)=>'magazines/'+(i+1))}
 ];
