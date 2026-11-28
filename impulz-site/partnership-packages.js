@@ -6,7 +6,7 @@ const partnershipPackages = [
 ];
 document.querySelectorAll('[data-partnership-packages]').forEach(mount=>{
   const offers=document.createElement('div');offers.className='partner-offers';
-  offers.innerHTML='<span class="eyebrow">OUR PACKAGES</span><h2>'+ 'Ongoing Creative <em class="review-gradient">Partnerships</em>' +'</h2><p>Flexible monthly plans for ongoing design support.</p>';
+  offers.innerHTML='<h2>'+ 'Ongoing Creative <em class="review-gradient">Partnerships</em>' +'</h2><p>Flexible monthly plans for ongoing design support.</p>';
   const grid=document.createElement('div');grid.className='partner-grid';
   partnershipPackages.forEach(plan=>{
     const card=document.createElement('article');card.className='partner-card'+(plan.featured?' featured':'');
