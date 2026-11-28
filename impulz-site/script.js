@@ -4,8 +4,7 @@ const groups=[
 {name:'Flyers & Postcards',ids:Array.from({length:28},(_,i)=>'flyer-'+String(i+1).padStart(2,'0'))},
 {name:'Social Media Designs',ids:Array.from({length:18},(_,i)=>'Socialmedia/'+(i+1))},
 {name:'Display Graphics',ids:Array.from({length:9},(_,i)=>'Displaygraphics/'+(i+1))},
-{name:'Magazines & eBooks',ids:Array.from({length:16},(_,i)=>'magazines/'+(i+1))},
-{name:'Product Label & Packaging',ids:[]}
+{name:'Magazines & eBooks',ids:Array.from({length:16},(_,i)=>'magazines/'+(i+1))}
 ];
 const pathFor=n=>typeof n==='string'?'assets/portfolio/'+n+'.webp':'assets/portfolio/project-'+String(n).padStart(2,'0')+'.webp';
 const grid=document.getElementById('gallery'),dialog=document.getElementById('lightbox'),large=document.getElementById('large'),thumbs=document.getElementById('gallery-thumbs'),counter=document.getElementById('gallery-count');
